@@ -190,4 +190,4 @@ if page == "Voir la carte globale":
             "Une fois par an": "blue"
         }
     )
-            st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
