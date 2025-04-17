@@ -76,7 +76,7 @@ def geocoder_adresse(adresse):
     return None, None
 
 # === SESSION STATE ===
-for var, default in [("lat", None), ("lon", None), ("adresse", ""), ("zoom", 15)]:
+for var, default in [("lat", None), ("lon", None), ("adresse", ""), ("zoom", 14)]:
     if var not in st.session_state:
         st.session_state[var] = default
 
