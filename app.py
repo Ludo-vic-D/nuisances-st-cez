@@ -76,7 +76,7 @@ def geocoder_adresse(adresse):
     return None, None
 
 # === SESSION STATE ===
-for var, default in [("lat", None), ("lon", None), ("adresse", ""), ("zoom", 14)]:
+for var, default in [("lat", None), ("lon", None), ("adresse", ""), ("zoom", 15)]:
     if var not in st.session_state:
         st.session_state[var] = default
 
@@ -86,9 +86,10 @@ page = st.sidebar.radio("Navigation", ["Déclarer une nuisance", "Voir la carte 
 # === PAGE 1 : DÉCLARATION ===
 if page == "Déclarer une nuisance":
     st.header("📍 Déclarer une nuisance ressentie")
+    st.subheader("Double clic sur la carte pour placer le repère, possible de chercher avec l'adresse dans le bandeau de gauche")
 
     with st.sidebar:
-        nom = st.text_input("Votre nom (optionnel, laisser vide pour 'anonyme')", "")
+        nom = st.text_input("Votre nom ou pseudo (laisser vide pour 'anonyme')", "")
         adresse = st.text_input("Adresse (autocomplétée via OpenStreetMap)", st.session_state.adresse)
 
         if adresse and adresse != st.session_state.adresse:
@@ -159,7 +160,7 @@ if page == "Voir la carte globale":
         ]
 
         st.subheader("Carte interactive")
-        carte = folium.Map(location=[df["lat"].mean(), df["lon"].mean()], zoom_start=13)
+        carte = folium.Map(location=[df["lat"].mean(), df["lon"].mean()], zoom_start=14)
 
         for _, row in df_filtré.iterrows():
             type_principal = row["nuisances"].split(";")[0]
