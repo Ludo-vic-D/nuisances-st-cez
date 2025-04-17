@@ -127,7 +127,8 @@ if page == "Déclarer une nuisance":
                 st.warning("Veuillez indiquer une adresse ou cliquer sur la carte, et cocher au moins un type de nuisance.")
 
     map_center = [st.session_state.lat or 43.65388, st.session_state.lon or 6.80198]
-    m = folium.Map(location=map_center, zoom_start=st.session_state.zoom)
+    m = folium.Map(location=map_center, zoom_start=st.session_state.zoom,
+    doubleClickZoom=False)
 
     if st.session_state.lat and st.session_state.lon:
         folium.Marker([st.session_state.lat, st.session_state.lon], tooltip="Localisation sélectionnée").add_to(m)
