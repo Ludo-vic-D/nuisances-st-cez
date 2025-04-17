@@ -86,7 +86,7 @@ page = st.sidebar.radio("Navigation", ["Déclarer une nuisance", "Voir la carte 
 # === PAGE 1 : DÉCLARATION ===
 if page == "Déclarer une nuisance":
     st.header("📍 Déclarer une nuisance ressentie")
-    st.subheader("Double clic sur la carte pour placer le repère, possible de chercher avec l'adresse dans le bandeau de gauche")
+    st.text("Double clic sur la carte pour placer le repère, possible de chercher avec l'adresse dans le bandeau de gauche ; renseignez les rubriques dans le bandeau et appuyer sur envoyer la declaration")
 
     with st.sidebar:
         nom = st.text_input("Votre nom ou pseudo (laisser vide pour 'anonyme')", "")
