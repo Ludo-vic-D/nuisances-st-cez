@@ -177,7 +177,7 @@ if page == "Voir la carte globale":
         data_exploded["nuisances"] = data_exploded["nuisances"].str.split(";")
         data_exploded = data_exploded.explode("nuisances")
 
-    px.histogram(
+    fig = px.histogram(
         data_exploded,
         x="nuisances",
         color="frequence",
