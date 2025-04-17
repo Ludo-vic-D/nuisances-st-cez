@@ -9,7 +9,7 @@ import boto3
 import io
 
 # === CONFIGURATION STREAMLIT ===
-st.set_page_config(page_title="Déclaration de nuisances", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Déclaration de nuisances", layout="wide", initial_sidebar_state="expanded")
 
 # === PARAMÈTRES ===
 NUISANCES = ["Bruit", "Odeur", "Effet sur la santé", "Lumineuse"]
